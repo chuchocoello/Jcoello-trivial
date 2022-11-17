@@ -1,0 +1,51 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.App{
+height: 100vh;
+width: 100vw;
+display: flex;
+flex-direction: column;
+background-color: lightblue;
+justify-content: center;
+align-items: center;
+}
+
+.Counter{
+  background-color: burlywood;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  height: 111px;
+  width: 80%;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.Questions{
+  background-color: burlywood;
+  width: 80%;
+  max-width: 500px;  
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Question{
+  background-color: blueviolet;
+  height: 70px;
+  border-radius: 20px;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.Answer{
+  background-color: blueviolet;
+  color: white;
+  padding: 20px;
+}
