@@ -43,7 +43,6 @@ align-items: center;
   flex-direction: column;
   gap: 20px;
   border: solid 2.5px white;
-  margin-bottom: 20px;
 }
 
 .Question{
