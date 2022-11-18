@@ -335,9 +335,9 @@ function App() {
         <h1>JCoello Trivial</h1>
         {
         <h1>&#10003;
-          <span style={{ color: 'blue' }}> {countWin}</span>
+        {countWin}
           {' - '}
-          <span style={{ color: 'red' }}>{countLose} </span>
+        {countLose}
           &#10007;
         </h1>
         }
