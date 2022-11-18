@@ -3,19 +3,22 @@
   padding: 0;
 }
 
+html{
+  background-color: #FF99D7;
+}
+
 .App{
 height: 100vh;
 width: 100vw;
 display: flex;
 flex-direction: column;
-background-color: lightblue;
 justify-content: flex-start;
 align-items: center;
 }
 
 .Counter{
   margin-top: 30px;
-  background-color: burlywood;
+  background-color: #EA047E;
   text-align: center;
   padding: 20px;
   border-radius: 20px;
@@ -23,10 +26,15 @@ align-items: center;
   width: 80%;
   max-width: 500px;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  border: solid 2.5px white;
 }
 
 .Questions{
-  background-color: burlywood;
+  background-color: #EA047E;
   width: 80%;
   max-width: 500px;  
   padding: 20px;
@@ -34,21 +42,34 @@ align-items: center;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  border: solid 2.5px white;
 }
 
 .Question{
-  background-color: blueviolet;
+  background-color: #5BB318;
   height: 70px;
   border-radius: 20px;
   color: white;
   padding: 20px;
   text-align: center;
+  border: solid 2.5px white;
 }
 
 .Answer{
-  background-color: blueviolet;
   color: white;
   padding: 20px;
-  border: transparent;
   border-radius: 20px;
+  border: solid 2.5px white;
+}
+
+.a{
+  background-color: #FF6D28;
+}
+
+.b{
+  background-color: #FFDE00;
+}
+
+.c{
+  background-color: #2192FF;
 }

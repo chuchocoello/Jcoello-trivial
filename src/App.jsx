@@ -294,12 +294,15 @@ function App() {
   ];
   // https://www.todamateria.com/preguntas-de-cultura-general/
 
+  //Estados: ganadas, perdidas y el numero de la pregunta
   const [countWin, setCountWin] = useState(0);
   const [countLose, setCountLose] = useState(0);
   const [numero, setNumero] = useState(0)
 
 {let winner = countWin > 21 ? true : false
  let losser = countLose > 21 ? true : false}
+
+  //funsiones para agregar ala cuenta de ganados, perdidos y numeros aleatorios
 
   const win = () => {
     setCountWin(countWin + 1)
@@ -310,6 +313,8 @@ function App() {
   const cambioNumero = () =>  {
     setNumero(Math.floor(Math.random()*questionsList.length))
   }
+
+  // funciones para las acciones de los botones de las respuestas 1, 2 y 3
 
   const boton1 = () =>{
     cambioNumero();
@@ -327,12 +332,13 @@ function App() {
   return (
     <div className="App">
       <div className="Counter">
-        <h1>JCoello Trivial {questionsList.length}</h1>
+        <h1>JCoello Trivial</h1>
         {
-        <h1>
-          <span style={{ color: 'blue' }}>{countWin}</span>
+        <h1>&#10003;
+          <span style={{ color: 'blue' }}> {countWin}</span>
           {' - '}
-          <span style={{ color: 'red' }}>{countLose}</span>
+          <span style={{ color: 'red' }}>{countLose} </span>
+          &#10007;
         </h1>
         }
       </div>
@@ -340,9 +346,9 @@ function App() {
         <div className="Question">
           <h3>¿{questionsList[numero].q}?</h3>
         </div>
-        <button className="Answer" onClick={boton1}>{questionsList[numero].a1}</button>
-        <button className="Answer" onClick={boton2}>{questionsList[numero].a2}</button>
-        <button className="Answer" onClick={boton3}>{questionsList[numero].a3}</button>
+        <button className="Answer a" onClick={boton2}>{questionsList[numero].a1}</button>
+        <button className="Answer b" onClick={boton2}>{questionsList[numero].a2}</button>
+        <button className="Answer c" onClick={boton3}>{questionsList[numero].a3}</button>
       </section>
     </div>
   );
