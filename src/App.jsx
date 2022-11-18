@@ -93,17 +93,15 @@ function App() {
 
   const boton1 = () =>{
     cambioNumero();
-
-    //questionsList.ans = 1 ? win() : lose()
-
+    questionsList[numero].ans == 1 ? win() : lose()
   }
   const boton2 = () =>{
     cambioNumero();
-
+    questionsList[numero].ans == 2 ? win() : lose()
   }
   const boton3 = () =>{
     cambioNumero();
-
+    questionsList[numero].ans == 3 ? win() : lose()
   }
 
   return (
@@ -116,7 +114,6 @@ function App() {
           <span style={{ color: 'red' }}>{countLose}</span>
         </h1>
       </div>
-
       <section className="Questions">
         <div className="Question">
           <h3>¿{questionsList[numero].q}?</h3>

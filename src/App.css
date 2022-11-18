@@ -48,4 +48,6 @@ align-items: center;
   background-color: blueviolet;
   color: white;
   padding: 20px;
+  border: transparent;
+  border-radius: 20px;
 }
