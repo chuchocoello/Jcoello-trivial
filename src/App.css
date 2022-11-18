@@ -43,11 +43,12 @@ align-items: center;
   flex-direction: column;
   gap: 20px;
   border: solid 2.5px white;
+  margin-bottom: 20px;
 }
 
 .Question{
   background-color: #5BB318;
-  height: 70px;
+  min-height: 70px;
   border-radius: 20px;
   color: white;
   padding: 20px;
