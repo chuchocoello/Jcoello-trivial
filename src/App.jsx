@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import questionsList from "./data/questionsList.js";
 import Questions from "./components/Questions.jsx";
+import Final from "./components/Final.jsx";
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
   const [countLose, setCountLose] = useState(0);
   const [numero, setNumero] = useState(0)
 
-  //funsiones para agregar ala cuenta de ganados, perdidos y numeros aleatorios
+  //funsiones para agregar ala cuenta de ganados, perdidos, numeros aleatorios y reinicio
   const win = () => {
     setCountWin(countWin + 1)
   }
@@ -19,6 +20,11 @@ function App() {
   }
   const cambioNumero = () =>  {
     setNumero(numero+1)
+  }
+  const reinicio = () => {
+    setNumero(0)
+    setCountLose(0)
+    setCountWin(0)
   }
   const shuffleArray = array => {
     for (let i = array.length -1; i > 0; i--) {
@@ -50,11 +56,14 @@ function App() {
   return (
     <div className="App">
       <div className="Counter">
-        <h1>JCoello Trivial</h1>
+        <h1>Trivias by JCoello</h1>
         {<h1>&#10003; {countWin}{' - '}{countLose} &#10007;</h1>}
       </div>
-      <Questions numero = {numero} shufflequestionsList = {shufflequestionsList} boton1 = {boton1} boton2 = {boton2} boton3 = {boton3}/>
-      
+      {
+        numero < shufflequestionsList.length ?
+        <Questions numero = {numero} shufflequestionsList = {shufflequestionsList} boton1 = {boton1} boton2 = {boton2} boton3 = {boton3}/> :
+        <Final countWin = {countWin} countLose = {countLose} reinicio={reinicio}/>
+      }
     </div>
   );
 }

@@ -4,6 +4,7 @@ const Questions = ({shufflequestionsList, numero, boton1, boton2, boton3}) => {
     <section className="Questions">
         <div className="Question">
           <h3>¿{shufflequestionsList[numero].q}?</h3>
+          <p>{numero}/{shufflequestionsList.length}</p>
         </div>
         <button className="Answer a" onClick={boton1}>{shufflequestionsList[numero].a1}</button>
         <button className="Answer b" onClick={boton2}>{shufflequestionsList[numero].a2}</button>
