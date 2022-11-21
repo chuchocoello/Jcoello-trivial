@@ -70,7 +70,7 @@ function App() {
   return (
     <div className="App">
       <div className="Counter">
-        <h1>Trivias by JCoello</h1>
+        <h1>Trivias by JCoell0</h1>
         {<h1>&#10003; {countWin}{' - '}{countLose} &#10007;</h1>}
       </div>
       {
