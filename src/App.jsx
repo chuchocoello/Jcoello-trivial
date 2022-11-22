@@ -10,9 +10,9 @@ function App() {
   //Estados: ganadas, perdidas y el numero de la pregunta
   const [countWin, setCountWin] = useState(0);
   const [countLose, setCountLose] = useState(0);
-  const [numero, setNumero] = useState(Math.floor(Math.random()*questionsList.length))
+  const [numero, setNumero] = useState(0)
   const [respondidas, setRespondidas] = useState(0)
-  const [terminado, setTerminado]= useState(false)
+  const [terminado, setTerminado] = useState(false)
 
   //funsiones para agregar ala cuenta de ganados, perdidos, numeros aleatorios y reinicio
   const win = () => {
