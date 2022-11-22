@@ -13,6 +13,7 @@ function App() {
   const [numero, setNumero] = useState(0)
   const [respondidas, setRespondidas] = useState(0)
   const [terminado, setTerminado] = useState(false)
+  const [questionsList1, useQuestionsList1] = useState(questionsList)
 
   //funsiones para agregar ala cuenta de ganados, perdidos, numeros aleatorios y reinicio
   const win = () => {
@@ -34,6 +35,7 @@ function App() {
     setCountLose(0)
     setCountWin(0)
     setTerminado(false)
+    
   } 
 
   //funciones para las acciones de los botones de las respuestas 1, 2 y 3
