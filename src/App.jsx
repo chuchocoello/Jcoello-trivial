@@ -26,29 +26,16 @@ function App() {
     setCountLose(0)
     setCountWin(0)
   }
-  // const shuffleArray = array => {
-  //   for (let i = array.length -1; i > 0; i--) {
-  //     const j = Math.floor(Math.random() * ( i + 1 ));
-  //     const temp = array[i];
-  //     array[i] = array[j];
-  //     array[j] = temp;
-  //   }
-  //   return array;
-  // };
-  const shuffleArray = array =>{
-    let shuffledArray = []
-    let usedIndexes = []
-    let i = 0
-    while (i < array.length ){
-        let randomNumber = Math.floor(Math.random()*array.length)
-        if(!usedIndexes.includes(randomNumber)){
-            shuffledArray.push(array[randomNumber])
-            usedIndexes.push(randomNumber)
-            i++
-        }
+  const shuffleArray = array => {
+    for (let i = array.length -1; i > 0; i--) {
+      const j = Math.floor(Math.random() * ( i + 1 ));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
     }
-    return shuffledArray
-}
+    return array;
+  };
+ 
 
   //funciones para las acciones de los botones de las respuestas 1, 2 y 3
   const boton1 = () =>{
@@ -70,7 +57,7 @@ function App() {
   return (
     <div className="App">
       <div className="Counter">
-        <h1>Trivias by JCoell0</h1>
+        <h1>Trivias by JCoello</h1>
         {<h1>&#10003; {countWin}{' - '}{countLose} &#10007;</h1>}
       </div>
       {
