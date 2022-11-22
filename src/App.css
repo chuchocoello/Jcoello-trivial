@@ -74,7 +74,7 @@ align-items: center;
 }
 
 .b{
-  background-color: #FAC213;
+  background-color: #CF0023;
 }
 
 .c{
@@ -116,7 +116,9 @@ align-items: center;
 .reinicio{
   margin: 10px;
   margin-top: 30px;
-  padding: 10px;
+  padding: 15px;
   border: solid white 2.5px;
   border-radius: 20px;
+  background-color: #5BB318;
+  color: white;
 }

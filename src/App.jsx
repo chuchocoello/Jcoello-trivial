@@ -19,40 +19,31 @@ function App() {
     setCountLose(countLose + 1)
   }
   const cambioNumero = () =>  {
-    setNumero(numero+1)
+    let random = Math.floor(Math.random()*questionsList.length);
+    setNumero(random)
+    questionsList = questionsList.splice(random, 1)
+    console.log(questionsList)
   }
+  
   const reinicio = () => {
     setNumero(0)
     setCountLose(0)
     setCountWin(0)
-  }
-  const shuffleArray = array => {
-    for (let i = array.length -1; i > 0; i--) {
-      const j = Math.floor(Math.random() * ( i + 1 ));
-      const temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-    }
-    return array;
-  };
- 
+  } 
 
   //funciones para las acciones de los botones de las respuestas 1, 2 y 3
   const boton1 = () =>{
-    cambioNumero();
     questionsList[numero].ans === 1 ? win() : lose()
+    cambioNumero();
   }
   const boton2 = () =>{
-    cambioNumero();
     questionsList[numero].ans === 2 ? win() : lose()
+    cambioNumero();
   }
   const boton3 = () =>{
-    cambioNumero();
     questionsList[numero].ans === 3 ? win() : lose()
+    cambioNumero();
   }
-
-// Revolvemos el Array  de preguntas aleatoreamente
-  const shufflequestionsList = shuffleArray(questionsList)
 
   return (
     <div className="App">
@@ -61,8 +52,8 @@ function App() {
         {<h1>&#10003; {countWin}{' - '}{countLose} &#10007;</h1>}
       </div>
       {
-        numero < shufflequestionsList.length ?
-        <Questions numero = {numero} shufflequestionsList = {shufflequestionsList} boton1 = {boton1} boton2 = {boton2} boton3 = {boton3}/> :
+        0 < questionsList.length ?
+        <Questions numero = {numero} questionsList = {questionsList} boton1 = {boton1} boton2 = {boton2} boton3 = {boton3}/> :
         <Final countWin = {countWin} countLose = {countLose} reinicio={reinicio}/>
       }
     </div>
