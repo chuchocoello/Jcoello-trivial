@@ -5,11 +5,14 @@ import Questions from "./components/Questions.jsx";
 import Final from "./components/Final.jsx";
 
 function App() {
+  const tamaño = 41
 
   //Estados: ganadas, perdidas y el numero de la pregunta
   const [countWin, setCountWin] = useState(0);
   const [countLose, setCountLose] = useState(0);
-  const [numero, setNumero] = useState(0)
+  const [numero, setNumero] = useState(Math.floor(Math.random()*questionsList.length))
+  const [respondidas, setRespondidas] = useState(0)
+  const [terminado, setTerminado]= useState(false)
 
   //funsiones para agregar ala cuenta de ganados, perdidos, numeros aleatorios y reinicio
   const win = () => {
@@ -19,16 +22,18 @@ function App() {
     setCountLose(countLose + 1)
   }
   const cambioNumero = () =>  {
-    let random = Math.floor(Math.random()*questionsList.length);
-    setNumero(random)
-    questionsList = questionsList.splice(random, 1)
-    console.log(questionsList)
+    if(questionsList.length != 1){
+      questionsList = questionsList.splice(numero, 1)
+      setNumero(Math.floor(Math.random()*questionsList.length))
+      setRespondidas(respondidas +1)
+    }else{setTerminado(true)}
   }
   
   const reinicio = () => {
     setNumero(0)
     setCountLose(0)
     setCountWin(0)
+    setTerminado(false)
   } 
 
   //funciones para las acciones de los botones de las respuestas 1, 2 y 3
@@ -52,7 +57,7 @@ function App() {
         {<h1>&#10003; {countWin}{' - '}{countLose} &#10007;</h1>}
       </div>
       {
-        0 < questionsList.length ?
+        !terminado ?
         <Questions numero = {numero} questionsList = {questionsList} boton1 = {boton1} boton2 = {boton2} boton3 = {boton3}/> :
         <Final countWin = {countWin} countLose = {countLose} reinicio={reinicio}/>
       }
