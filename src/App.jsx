@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import questionsList from "./data/questionsList.js";
+import questionsListInit from "./data/questionsList.js";
 import Questions from "./components/Questions.jsx";
 import Final from "./components/Final.jsx";
 
@@ -13,7 +13,7 @@ function App() {
   const [numero, setNumero] = useState(0)
   const [respondidas, setRespondidas] = useState(0)
   const [terminado, setTerminado] = useState(false)
-  const [questionsList1, useQuestionsList1] = useState(questionsList)
+  const [questionsList, setQuestionsList] = useState(questionsListInit)
 
   //funsiones para agregar ala cuenta de ganados, perdidos, numeros aleatorios y reinicio
   const win = () => {
@@ -35,7 +35,7 @@ function App() {
     setCountLose(0)
     setCountWin(0)
     setTerminado(false)
-    
+    setQuestionsList(questionsListInit)
   } 
 
   //funciones para las acciones de los botones de las respuestas 1, 2 y 3
