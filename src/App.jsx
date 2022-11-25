@@ -10,7 +10,7 @@ function App() {
   //Estados: ganadas, perdidas y el numero de la pregunta
   const [countWin, setCountWin] = useState(0);
   const [countLose, setCountLose] = useState(0);
-  const [numero, setNumero] = useState(0)
+  const [numero, setNumero] = useState(Math.floor(Math.random()*10))
   const [respondidas, setRespondidas] = useState(0)
   const [terminado, setTerminado] = useState(false)
   const [questionsList, setQuestionsList] = useState(questionsListInit)
@@ -24,14 +24,16 @@ function App() {
   }
   const cambioNumero = () =>  {
     if(questionsList.length != 1){
-      questionsList = questionsList.splice(numero, 1)
-      setNumero(Math.floor(Math.random()*questionsList.length))
+      const copyArrayQuestions = [...questionsList]
+      copyArrayQuestions.splice(numero, 1)
+      setNumero(Math.floor(Math.random()*copyArrayQuestions.length))
+      setQuestionsList(copyArrayQuestions)
       setRespondidas(respondidas +1)
     }else{setTerminado(true)}
   }
   
   const reinicio = () => {
-    setNumero(0)
+    setNumero(Math.floor(Math.random()*10))
     setCountLose(0)
     setCountWin(0)
     setTerminado(false)
